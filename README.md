@@ -11,29 +11,37 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+ Mailgun_mailer flutter
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Mailgun_mailer is a simple library for composing and sending emails 
 
-## Getting started
+## Example
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+import 'dart:developer';
+import 'package:mailgun_mailer/src/mailer.dart';
+import 'package:mailgun_mailer/src/model/request.dart';
 
-## Usage
+void main() async {
+  final apiKey = '< APIKEY >';
+  final domain = '< DOMAIN >';
+  try {
+    final mailService = MailgunMailer(
+      apiKey: apiKey,
+      domain: domain,
+    );
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+    final email = MailRequest(
+      content: 'Hola Mundo con MailGun Mailer !!!',
+      from: 'ejemplo <ejemplo@gmail.com>',
+      to: [' ejemplo@gmail.com'],
+      subject: 'Hola desde MailGun Mailer !!!',
+    );
 
-```dart
-const like = 'sample';
-```
+    await mailService.send(email);
+  } catch (e) {
+    log('Error: $e');
+  }
+}
 
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.

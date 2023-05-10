@@ -1,6 +1,4 @@
 
-import 'dart:core';
-
 class MailRequest {
   final String from;
   final String content;
@@ -41,5 +39,4 @@ class MailRequest {
         'template': template,
         'options': options,
       };
-
 }
