@@ -18,7 +18,7 @@ and the Flutter guide for
 - Mailgun_mailer is a simple library for composing and sending emails 
 
 ## Example
-
+```
 import 'dart:developer';
 import 'package:mailgun_mailer/src/mailer.dart';
 import 'package:mailgun_mailer/src/model/request.dart';
@@ -45,3 +45,4 @@ void main() async {
   }
 }
 
+```
