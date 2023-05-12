@@ -1,6 +1,6 @@
 name: mailgun_mailer
 description: flutter mailgun_mailer
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/Mizael55/mailgun_mailer
 
 environment:
